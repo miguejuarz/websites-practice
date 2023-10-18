@@ -1,0 +1,52 @@
+.showcase {
+    background-image: linear-gradient(to right, #41dadf, #322f30);
+    height: 100vh;
+}
+h1 {
+    letter-spacing: 4px;
+}
+
+.showcase-bottom::after {
+    content: '';
+    position: absolute;
+    height: 200px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(5deg);
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+}
+
+/* sustituir una clase de bootstrap*/
+.bg-primary,
+.btn-primary {
+    background:  #cb8058;
+}
+.bg-primary,
+.btn-primary:hover {
+    background:   #7f594c ;
+}
+
+/* Mobile*/
+
+@media (max-width: 768px) {
+    .showcase {
+        height: 100%;
+        padding: 100px 0;
+    }
+
+    .showcase .col-md-5 img {
+        height: 450px;
+        display: block;
+        margin: auto 0;
+        padding-top: 20px;
+    }
+
+
+    .showcase-bottom::after {
+        display: none ;
+    }
+}
