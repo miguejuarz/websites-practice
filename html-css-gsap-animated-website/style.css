@@ -58,41 +58,79 @@ body {
 
 .img1 {
     transform: scale(1.1);
-    background: url(images/image1.jpg) 50% 50% no repeat;
+    background: no-repeat center/50% url(images/image1.jpg);
     background-size: cover;
 }
+
 .img2 {
-    transform: scale(1.1);
-    background: url(images/image2.jpg) 50% 50% no repeat;
+    transform: scale(1.4);
+    background: no-repeat center/50% url(images/image2.jpg);
     background-size: cover;
-}
-.img2 {
-    transform: scale(1.1);
-    background: url(images/image2.jpg) 50% 50% no repeat;
-    background-size: cover;
+    padding: 50px;
+
 }
 .img3 {
     transform: scale(1.1);
-    background: url(images/image3.jpg) 50% 50% no repeat;
+    background: no-repeat center/50% url(images/image3.jpg) ;
     background-size: cover;
 }
 .img4 {
-    transform: scale(1.1);
-    background: url(images/image4.jpg) 50% 50% no repeat;
+    transform: scale(1.4);
+    background: no-repeat center/50% url(images/image4.jpg);
     background-size: cover;
 }
 .img5 {
     transform: scale(1.1);
-    background: url(images/image5.jpg) 50% 50% no repeat;
+    background: no-repeat center/50% url(images/image5.jpg);
     background-size: cover;
 }
 
+.title span {
+    position: absolute;
+    font-size: 150px;
+    text-transform: uppercase;
+    color: #fff;
+    top: 40%;
+    left: 220px;
+    font-weight: bolder;
+    letter-spacing: 50px;
+    z-index: 2;
+}
+.side-icon {
+    display: flex;
+    position: absolute;
+    top: 45%;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px;
+    font-size: 40px;
+    color: #999;
+}
 
+.bottom-bar {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    color: #e1e1e1;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
 
+.media ul {
+    list-style: none;
+    position: fixed;
+    right: 41px;
+    top: 65%;
+}
 
-
-
-
+.media ul li {
+    font-size: 18px;
+    margin: 24px 0;
+    color: #fff;
+}
 
 
 
