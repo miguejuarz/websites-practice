@@ -44,3 +44,76 @@ cardButton.addEventListener("click", (submitQuestion = ()=> {
     }
 })
 );
+
+// Card Generate
+function viewlist() {
+    let listCard = document.getElementsByClassName("card-list-container");
+    let div = document.createElement("div");
+    div.classList.add("card");
+    //Question
+    div.innerHTML += `<p class="question-div"> ${question.value}</p>`;
+    //Answer
+    let displayAnswer = document.createElement("p");
+    displayAnswer.classList.add("answer-div", "hide");
+    displayAnswer.innerText = answer.value;
+
+    //Link to show/hide answer
+    let link = document.createElement("a");
+    link.setAttribute("href", "#");
+    link.setAttribute("class", "show-hide-btn");
+    link.innerHTML = "Show/Hide";
+    link.addEventListener("click", () => {
+        displayAnswer.classList.toggle("hide");
+    });
+
+    div.appendChild(link);
+    div.appendChild(displayAnswer);
+
+    //Edit button
+    let buttonsCon = document.createElement("div");
+    buttonsCon.classList.add("buttons-con");
+    let editButton = document.createElement("button");
+    editButton.setAttribute("class", "edit");
+    editButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
+    editButton.addEventListener("click",() => {
+        editBool = true;
+        modifyElement(editButton, true);
+        addQuestionCard.classList.remove("hide");
+    });
+    buttonsCon.appendChild(editButton);
+    disableButtons(false);
+
+    //Delete button
+    let deleteButton = document.createElement("button");
+    deleteButton.setAttribute("class", "disabled");
+    deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+    deleteButton.addEventListener("click", ()=> {
+        modifyElement(deleteButton);
+    });
+    buttonsCon.appendChild(deleteButton);
+
+    div.appendChild(buttonsCon);
+    listCard[0].appendChild(div);
+    hideQuestion();
+}
+
+//Modify Elements
+const modifyElement = (element, edit = false) => {
+    let parentDiv = element.parentElement.parentElement;
+    let parentQuestion = parentDiv.querySelector(".question-div").innerText;
+    if(edit){
+        let parentAns = parentDiv.querySelector(".answer-div").innerText;
+        answer.value = parentAns;
+        question.value = parentQuestion;
+        disableButtons(true);
+    }
+    parentDiv.remove();
+}
+
+//Disable edit and delete buttons
+const disableButtons = (value) => {
+    let editButtons = document.getElementsByClassName("edit");
+    Array.from(editButtons).forEach((element) => {
+        element.disabled = value;
+    });
+};
