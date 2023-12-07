@@ -85,7 +85,7 @@ function viewlist() {
 
     //Delete button
     let deleteButton = document.createElement("button");
-    deleteButton.setAttribute("class", "disabled");
+    deleteButton.setAttribute("class", "delete");
     deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
     deleteButton.addEventListener("click", ()=> {
         modifyElement(deleteButton);
